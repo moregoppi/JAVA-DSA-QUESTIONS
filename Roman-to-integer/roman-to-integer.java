@@ -12,11 +12,9 @@ public class RomanToInteger
             char a = (char)str.charAt(i);
             if(a=='I'){
                 sum++;
-            }
-            else if(a=='V'){
+            }else if(a=='V'){
                 sum+=5;
-            }
-            else if(a=='X'){
+	    }else if(a=='X'){
                 sum+=10;
             }else if(a=='L'){
                 sum+=50;
