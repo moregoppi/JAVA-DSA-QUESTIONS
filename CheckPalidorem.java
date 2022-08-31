@@ -21,7 +21,7 @@ public class Main
         return true;
     }
 	public static void main(String[] args) {
-		String str="";
+		String str="A man, a plan, a canal: Panama";
  		System.out.println(checkIt(str));
 	}
 }
