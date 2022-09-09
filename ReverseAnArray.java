@@ -13,6 +13,17 @@ public class Main
             end--;
         }
     }
+// 	this is the same function but in rescursion form
+//     public static void reverseArray(int arr[],int i){
+//         //base case if
+//         if(i==0){
+//             System.out.print(arr[i]);
+//             return;
+//         }
+//         System.out.print(arr[i]+" ");
+//         reverseArray(arr,i-1);
+            
+//     }
     public static void printArray(int arr[]){
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+" ");
