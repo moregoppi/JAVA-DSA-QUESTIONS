@@ -21,9 +21,12 @@ public class Main
     }
 	public static void main(String[] args) {
 	    Scanner sc=new Scanner(System.in);
-		int p=2;
-        int n=7;
-		int arr[]={1,2,3,4,5,6,7};
+        int n=sc.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++){
+		    arr[i]=sc.nextInt();
+		}
+		int p=sc.nextInt();
 		
 		rotateArray(arr,p,n);
 	}
