@@ -1,3 +1,7 @@
+// Find the largest rectangular area possible in a given histogram where the largest rectangle
+//can be made of a number of contiguous bars whose heights are given in an array. For simplicity, assume that all bars have the same width and the width is 1 unit. 
+//Input: histogram = {3, 5, 1, 7, 5, 9}
+// Output: 15
 import java.util.Stack;
 
 public class macrectangularareainhistogram {
