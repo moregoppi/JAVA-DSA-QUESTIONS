@@ -30,7 +30,7 @@ public class macrectangularareainhistogram {
                 s.pop();
             }
             if(s.isEmpty()){
-                nextsmallerright[i] = -1;
+                nextsmallerright[i] = arr.length;
             }else{
                 nextsmallerright[i] = s.peek();
             }
