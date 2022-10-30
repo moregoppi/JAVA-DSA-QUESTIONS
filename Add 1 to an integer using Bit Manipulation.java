@@ -7,3 +7,5 @@ public class Add1ToAnIntegerUsingBitManipulation
 		  System.out.println(-~a);
 	}
 }
+
+
