@@ -1,37 +1,29 @@
 //In this code we have a String And we have given a value of characters and we have to find the total of the string
 //Character Values are I=1, V=5, X=10, L=10, C=100, D=500, M=1000
 //EXAMPLE INPUT:- "XV1" OUTPUT:- 16   OR INPUT:- "LVIII" OUTPUT:- 58 
-import java.util.*;
-public class RomanToInteger
-{
-    public static void printIt(String str){
-        int sum=0;
-        //we are checking every character of string 
-        for(int i=0;i<str.length();i++){
-            //here that character which we get from string converting to character
-            char a = (char)str.charAt(i);
-            if(a=='I'){
-                sum++;
-            }else if(a=='V'){
-                sum+=5;
-	    }else if(a=='X'){
-                sum+=10;
-            }else if(a=='L'){
-                sum+=50;
-            }else if(a=='C'){
-                sum+=100;
-            }else if(a=='D'){
-                sum+=500;
-            }else if(a=='M'){
-                sum+=1000;
+
+class Solution {
+    public int romanToInt(String s) {
+        Map<Character, Integer> romanMap = new HashMap<>();
+        romanMap.put('I', 1);
+        romanMap.put('V', 5);
+        romanMap.put('X', 10);
+        romanMap.put('L', 50);
+        romanMap.put('C', 100);
+        romanMap.put('D', 500);
+        romanMap.put('M', 1000);
+
+        int n = s.length();
+
+        int num = romanMap.get(s.charAt(n-1));
+        for(int i = n - 2; i >= 0; i--){
+            if(romanMap.get(s.charAt(i)) >= romanMap.get(s.charAt(i + 1))){
+                num += romanMap.get(s.charAt(i));
+            }else{
+                num -= romanMap.get(s.charAt(i));
             }
-            
         }
-        System.out.println(sum);
+        return num;
+
     }
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in)
-		String str=sc.next();
-		printIt(str);
-	}
 }
