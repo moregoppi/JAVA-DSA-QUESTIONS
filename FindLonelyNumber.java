@@ -1,6 +1,7 @@
 import java.util.*;
 public class Main
 {
+// 	Method 1:
      public static void lonelyNum(ArrayList<Integer> list){
         for(int i=0; i<list.size(); i++){
             boolean lonely = false;
@@ -31,6 +32,29 @@ public class Main
             }
         }
      }
+	//Method 2: 
+	public static List<Integer> findLonely(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        List<Integer> ans = new ArrayList<>();
+        
+        for(int i=0; i<nums.length; i++){
+            list.add(nums[i]);
+        }
+        for(int i=0; i<list.size(); i++){
+            System.out.print(list.get(i)+" ");
+        }
+        for(int i=0; i<list.size(); i++){
+            if(list.contains(list.get(i)-1) || list.contains(list.get(i)+1)){
+               continue;
+            }else if( (Collections.frequency(list, list.get(i))) > 1 ){
+                continue;
+            } 
+            else{
+                ans.add(list.get(i));
+            }
+        }
+        return ans;
+    }
     
     
 	public static void main(String[] args) {
