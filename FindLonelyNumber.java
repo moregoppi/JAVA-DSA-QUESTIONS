@@ -13,23 +13,26 @@ public class Main
                     if(list.get(i) == list.get(j)){
                         lonely = true;
                     }
-                    if(i!=0){
+                    
+                    }if(i!=0){
                         if(list.get(i)-1==list.get(j)){
                             lonely = true;
-                    }
+                        }
                     }
                     if(i!=list.size()-1){
                         if(list.get(i)+1==list.get(i+1)){
                             lonely = true;
                         }
                     }
-                }
             }
+            
             if(lonely == false){
                 System.out.println(list.get(i));
             }
         }
-    }
+     }
+    
+    
 	public static void main(String[] args) {
         ArrayList<Integer> list1 = new ArrayList<>();
         list1.add(1);
