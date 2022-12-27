@@ -17,17 +17,18 @@ public class subtreeofanothertree {
         }else if(node == null || subroot == null || node.data != subroot.data){
             return false;
         }
-        if(isIdentical(node.left, subroot.left)){
+        if(!isIdentical(node.left, subroot.left)){
             return false;
         }
-        if(isIdentical(node.right, subroot.right)){
+        if(!isIdentical(node.right, subroot.right)){
             return false;
         }
         return true;
     }
+
     public static boolean isSubtree(Node root, Node subroot){
         if(root == null){
-            return true;
+            return false;
         }
         if(root.data == subroot.data){
             if(isIdentical(root, subroot)){
@@ -50,7 +51,7 @@ public class subtreeofanothertree {
         //subroot
         Node subroot =  new Node(2);
         subroot.left = new Node(4);
-        subroot.left.right = new Node(5);
+        subroot.right = new Node(5);
 
         System.out.println(isSubtree(root, subroot));
     }
