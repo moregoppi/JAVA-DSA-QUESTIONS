@@ -10,7 +10,7 @@ import java.util.*;
 
 public class activityselection {
     public static void main(String[] args) {
-
+                  
         //this is activites(start and end) are unsorted
         int start[] = {1,3,0,5,8,5};
         int end[] = {2,4,6,7,9,9};
