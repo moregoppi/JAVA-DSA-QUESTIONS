@@ -1,6 +1,6 @@
 import java.util.*;
 public class insertionsort {
-    public static void sorting(int[] array){
+    public static void printArray(int[] array){
         for(int i=0;i<array.length;i++){
             System.out.print(array[i]+" ");
         }
@@ -22,6 +22,6 @@ public class insertionsort {
             }
             array[j+1]=current;
         }
-        sorting(array);
+        printArray(array);
     }
 }
