@@ -1,3 +1,5 @@
+//Another Apporach: We can also check it using inorder traversal and if this will not give us sorted list or array then this means BST is invalid.
+
 public class validatebst {
     static class Node{
         int data;
