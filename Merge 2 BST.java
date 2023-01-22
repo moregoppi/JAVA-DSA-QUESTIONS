@@ -22,7 +22,7 @@ public class merge2bst {
         inOrder(root.right, list);
     }
 
-    // step 3: here we are building balanced bst using arraylist
+    // step 4: here we are building balanced bst using arraylist
     public static Node buildBst(ArrayList<Integer> list, int start, int end){
         if(start > end){
             return null;
@@ -37,7 +37,7 @@ public class merge2bst {
 
         return root;
     }
-    // this s for checking the balanced bst is valid or not 
+    // this is for checking the balanced bst is valid or not 
     public static void preOrder(Node root){
         if(root == null){
             return;
@@ -60,6 +60,7 @@ public class merge2bst {
         inOrder(root1, list);
         inOrder(root2, list);
 
+        // Step 3: sort the arraylist
         Collections.sort(list);
 
         Node root = buildBst(list, 0, list.size()-1);
