@@ -30,7 +30,7 @@
 // Output: -1
 
 
-
+// Brute Force
 class Solution {
     public int findJudge(int n, int[][] trust) {
         ArrayList<Integer> ai = new ArrayList<>();
@@ -47,6 +47,28 @@ class Solution {
         for(int i=0; i<bi.size(); i++){
             if(!ai.contains(bi.get(i))){
                 return bi.get(i);
+            }
+        }
+        return -1;
+    }
+}
+
+
+
+
+// Optimize method
+class Solution {
+    public int findJudge(int n, int[][] trust) {
+        int[] count = new int[n+1];
+
+        for(int[] t : trust){
+            count[t[0]]--;
+            count[t[1]]++;
+        }
+
+        for(int i=1; i<=n; i++){
+            if(count[i] == n-1){
+                return i;
             }
         }
         return -1;
