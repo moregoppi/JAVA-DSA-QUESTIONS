@@ -9,6 +9,9 @@ public class countofnodesofatree {
             this.right = null;
         }
     }
+    
+    
+    
     public static int countNodesOfTree(Node root){
         if(root == null){
             return 0;
@@ -17,6 +20,8 @@ public class countofnodesofatree {
         int rh = countNodesOfTree(root.right);
         return lh + rh + 1;
     }
+    
+    
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
