@@ -7,11 +7,6 @@
 
 // Return true if there is a 132 pattern in nums, otherwise, return false.
 
- 
-
-
-
-
 
 // Example 1:
 
