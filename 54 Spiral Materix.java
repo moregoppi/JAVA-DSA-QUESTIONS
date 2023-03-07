@@ -1,3 +1,13 @@
+//1 2 3 
+//4 5 6 
+//7 8 9 
+
+// Firstly :- Top  1,2,3
+// Secondly :- 6
+// thirdly :- 9,8,7
+// fourthly :- 4,5
+
+
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         int startrow = 0;
