@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class stackusingarraylist {
     static class stack{
         static ArrayList<Integer> list = new ArrayList<>();
