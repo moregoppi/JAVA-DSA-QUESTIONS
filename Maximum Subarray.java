@@ -60,3 +60,19 @@ class Solution {
         return maxsum;
     }
 }
+
+// Solution 3: Kadan's Algorithm
+class Solution {
+    public int maxSubArray(int[] arr) {
+        int ans = Integer.MIN_VALUE;
+        int curr = 0;
+        for(int i=0; i<arr.length; i++){
+            if(curr < 0){
+                curr = 0;
+            }
+            curr += arr[i];
+            ans = Math.max(ans, curr);
+        }
+        return ans;
+    }
+}
