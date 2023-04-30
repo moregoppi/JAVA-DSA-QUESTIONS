@@ -73,9 +73,25 @@
 
 //  Pick element 2 from end as this is the maximum we can get
 
-import java.util.*;
-public class Main{
-  public static void main(String[] args){
-    
-  }
+
+public class Solution {
+    public int solve(int[] A, int B) {
+        int n = A.length;
+        int l = 0, r = n - B;
+        
+        int total = 0;
+        for(int i=r; i<n; i++){
+            total += A[i];
+        }
+        int ans = total;
+        
+        while(r < n){
+            total += (A[l] - A[r]);
+            ans = Math.max(ans, total);
+            l++;
+            r++;
+        }
+        
+        return ans;
+    }
 }
