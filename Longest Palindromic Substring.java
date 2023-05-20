@@ -21,8 +21,40 @@
 // Input: s = "cbbd"
 // Output: "bb"
 
+// Solution 1:
+class Solution {
+    public String longestPalindrome(String s) {
+        int maxLen = 0;
+        int start = 0;
+
+        for(int i=0; i<s.length(); i++){
+            int len1 = expandFromCenter(s, i, i);
+            int len2 = expandFromCenter(s, i, i+1);
+
+            int len = Math.max(len1, len2);
+
+            if(len > maxLen){
+                maxLen = len;
+                start = i - (len - 1) / 2;
+            }
+        }
+
+        return s.substring(start, start + maxLen);
+    }
+
+    public static int expandFromCenter(String s, int left, int right){
+        while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)){
+            left--;
+            right++;
+        }
+
+        return right - left - 1;
+    }
+}
 
 
+
+// Solution 2:
 class Solution {
     public static boolean palidromString(String s, int left, int right){
         while(left < right){
