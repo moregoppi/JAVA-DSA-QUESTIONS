@@ -56,3 +56,44 @@ class Solution {
         return head;
     }
 }
+
+
+
+// Solution 2:
+
+
+/* Structure of node
+
+class Node
+{
+    int data;
+    Node next;
+    Node(int d) {data = d; next = null; }
+}
+*/
+
+class Solution
+{
+    //Function to find the data of nth node from the end of a linked list.
+    int getNthFromLast(Node head, int n)
+    {
+    	// Your code here	
+    	Stack<Node> s = new Stack<>();
+    	
+    	Node temp = head;
+    	while(temp != null){
+    	    s.push(temp);
+    	    temp = temp.next;
+    	}
+    	int count = 0;
+    	Node ans = null;
+    	while(count < n && !s.isEmpty()){
+    	    ans = s.pop();
+    	    count++;
+    	}
+    	if(count != n){
+    	    return -1;
+    	}
+    	return ans.data;
+    }
+}
