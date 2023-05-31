@@ -39,6 +39,35 @@
 // 58.9%
 
 
+// Solution : brute force
+class Solution {
+    public int maxVowels(String s, int k) {
+        int ans = 0;
+        for(int i=0; i<s.length()-k; i++){
+            int count = 0;
+            for(int j=i; j<i+k; j++){
+                if(checkIt(s.charAt(j))){
+                    count++;
+                }
+            }
+            if(count > ans){
+                ans = count;
+            }
+        }
+        return ans;
+    }
+
+    private static boolean checkIt(char ch){
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
+            return true;
+        }
+        return false;
+    }
+}
+
+
+
+// Solution : Optimze Solution
 class Solution {
     public int maxVowels(String s, int k) {
         int ans = 0;
@@ -71,3 +100,6 @@ class Solution {
         return false;
     }
 }
+
+
+
