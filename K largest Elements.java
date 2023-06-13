@@ -29,7 +29,7 @@
 // 1 ≤ Arr[i] ≤ 106
  
 
-
+// Brute Force
 
 class Solution {
     int[] kLargest(int[] arr, int n, int k) {
@@ -41,6 +41,27 @@ class Solution {
             ans[K] = arr[i];
             K++;
         }
+        return ans;
+    }
+}
+
+
+
+
+// Optimze Approach
+class Solution {
+    int[] kLargest(int[] arr, int n, int k) {
+        // code here
+        int[] ans = new int[k];
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        for(int a : arr){
+            pq.add(a);
+        }
+        
+        for(int i=0; i<k; i++){
+            ans[i] = pq.remove();
+        }
+        
         return ans;
     }
 }
