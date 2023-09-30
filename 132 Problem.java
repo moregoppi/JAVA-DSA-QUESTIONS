@@ -24,9 +24,7 @@
 // Output: true
 // Explanation: There are three 132 patterns in the sequence: [-1, 3, 2], [-1, 3, 0] and [-1, 2, 0].
 
-
-
-
+// Optimze method
 class Solution {
     public boolean find132pattern(int[] nums) {
         int ans = Integer.MIN_VALUE;
@@ -48,33 +46,21 @@ class Solution {
 
 
 
+// Brute Force
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// class Solution {
-//     public boolean find132pattern(int[] nums) {
-//         for(int i=0; i<nums.length-2; i++){
-//             for(int j=i+1; j<nums.length-1; j++){
-//                 for(int k=j+1; k<nums.length; k++){
-//                     if((nums[i] < nums[j] && nums[j] > nums[k] && nums[k] > nums[i])){
-//                         return true;
-//                     }else if(nums[i] < nums[k] && nums[k] < nums[j]){
-//                         return true;
-//                     }
-//                 }
-//             }
-//         }
-//         return false;
-//     }
-// }
+class Solution {
+    public boolean find132pattern(int[] nums) {
+        for(int i=0; i<nums.length-2; i++){
+            for(int j=i+1; j<nums.length-1; j++){
+                for(int k=j+1; k<nums.length; k++){
+                    if((nums[i] < nums[j] && nums[j] > nums[k] && nums[k] > nums[i])){
+                        return true;
+                    }else if(nums[i] < nums[k] && nums[k] < nums[j]){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+}
